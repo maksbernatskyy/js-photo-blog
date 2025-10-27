@@ -1,17 +1,6 @@
-/* Font Family */
-
-#title{
-    font-family: 'Edu Tas Beginner', sans-serif;
-}
-
-main{
-    font-family: 'Sometype Mono', 'monospace';
-}
-
-/* Background images */
-
-#body{
+body{
     background-image: url('./img/cork.png');
+    font-family: 'Edu Tas Beginner', sans-serif;
 }
 
 #header{
