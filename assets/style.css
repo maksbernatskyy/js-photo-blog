@@ -4,6 +4,10 @@
     font-family: 'Edu Tas Beginner', sans-serif;
 }
 
+main{
+    font-family: 'Sometype Mono', 'monospace';
+}
+
 /* Background images */
 
 #body{
