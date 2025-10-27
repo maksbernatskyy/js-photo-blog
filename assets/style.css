@@ -6,3 +6,7 @@ body{
 #header{
     background-image: url('./img/wall.png');
 }
+
+.text-secondary{
+    font-family: 'Sometype Mono', 'monospace';
+}
