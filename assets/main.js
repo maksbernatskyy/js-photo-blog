@@ -12,6 +12,7 @@ Tools:
 
 /* Funzioni */
 
+// Funzione markup
 function getMarkup(image, date, title) {
   `
     <div class="col">
@@ -27,8 +28,24 @@ function getMarkup(image, date, title) {
     `;
 }
 
+// ======================================================================
+// ======================================================================
+
 /* Variabili */
 
+// Contenitore card
+const cards = []
+console.log(cards)
+
+// ======================================================================
+// ======================================================================
+
 /* Collegamento API */
+
+fetch('https://lanciweb.github.io/demo/api/pictures/')
+   .then(response => response.json())
+   .then(data => {
+    cards.push(data)
+   })
 
 /* Ciclo inserimeto dati in pagina */
