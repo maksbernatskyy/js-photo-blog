@@ -33,19 +33,23 @@ function getMarkup(image, date, title) {
 
 /* Variabili */
 
-// Contenitore card
-const cards = []
+let cards = []
 console.log(cards)
-
-// ======================================================================
-// ======================================================================
 
 /* Collegamento API */
 
-fetch('https://lanciweb.github.io/demo/api/pictures/')
-   .then(response => response.json())
-   .then(data => {
-    cards.push(data)
-   })
+fetch("https://lanciweb.github.io/demo/api/pictures/")
+  .then((response) => response.json())
+  .then((data) => {
+    data.forEach((thisEl) => {
+        cards.push(thisEl)
+    })
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+// ======================================================================
+// ======================================================================
 
 /* Ciclo inserimeto dati in pagina */
