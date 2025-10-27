@@ -1,5 +1,15 @@
 /* Font Family */
 
-h1{
+#title{
     font-family: 'Edu Tas Beginner', sans-serif;
+}
+
+/* Background images */
+
+#body{
+    background-image: url('./img/cork.png');
+}
+
+#header{
+    background-image: url('./img/wall.png');
 }
