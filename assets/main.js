@@ -28,7 +28,7 @@ function getMarkupCards(image, date, title) {
 
 // Funzione markup della foto nell'overlay
 function getMarkupPhoto(photo) {
-  return `<img class="d-block w-100" src="${photo}" alt="">`
+  return `<img class="d-block w-100" src="${photo}" alt="">`;
 }
 
 // ======================================================================
@@ -71,35 +71,31 @@ fetch("https://lanciweb.github.io/demo/api/pictures/")
 
     // Tutti i div con classe card
     const photo = document.querySelectorAll(".card");
-    
+
     // Div con id overlay
-    const overlay = document.getElementById('overlay')
+    const overlay = document.getElementById("overlay");
 
     // Spazio foto nell'HTML
-    const photoField = document.getElementById('photofield')
-
-    
+    const photoField = document.getElementById("photofield");
 
     // Seleziono singolarmente i div
     photo.forEach((thisPhoto, i) => {
       // Al click di una card appare l'overlay
       thisPhoto.addEventListener("click", () => {
-        overlay.classList.remove('d-none')
-        const thisCard = cards[i]
+        overlay.classList.remove("d-none");
+        const thisCard = cards[i];
 
-        photoField.innerHTML += getMarkupPhoto(thisCard.url)
+        photoField.innerHTML += getMarkupPhoto(thisCard.url);
+
+        /* Chiusura overlay */
         
+        const button = document.getElementById("button");
 
+        button.addEventListener("click", () => {
+          overlay.classList.add("d-none");
+        });
       });
     });
-
-    /* Chiusura overlay */
-
-    const button = document.getElementById('button')
-
-    button.addEventListener('click', () => {
-      overlay.classList.toggle('d-none')
-    })
   })
   .catch((error) => {
     console.error(error);
