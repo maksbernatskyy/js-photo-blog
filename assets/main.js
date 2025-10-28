@@ -78,22 +78,25 @@ fetch("https://lanciweb.github.io/demo/api/pictures/")
     // Spazio foto nell'HTML
     const photoField = document.getElementById("photofield");
 
+    const button = document.getElementById("button");
+
+    button.addEventListener("click", () => {
+          overlay.classList.toggle("d-none");
+    });
+
     // Seleziono singolarmente i div
     photo.forEach((thisPhoto, i) => {
       // Al click di una card appare l'overlay
       thisPhoto.addEventListener("click", () => {
-        overlay.classList.remove("d-none");
+        overlay.classList.toggle("d-none");
+
         const thisCard = cards[i];
 
-        photoField.innerHTML += getMarkupPhoto(thisCard.url);
+        photoField.innerHTML = getMarkupPhoto(thisCard.url);
 
         /* Chiusura overlay */
-        
-        const button = document.getElementById("button");
 
-        button.addEventListener("click", () => {
-          overlay.classList.add("d-none");
-        });
+      
       });
     });
   })
