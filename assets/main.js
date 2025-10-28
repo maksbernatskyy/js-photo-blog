@@ -66,9 +66,12 @@ fetch("https://lanciweb.github.io/demo/api/pictures/")
 
     const photo = document.querySelectorAll(".card");
 
+    const overlay = document.getElementById('overlay')
+
     photo.forEach((thisPhoto) => {
       thisPhoto.addEventListener("click", () => {
-        console.log("Hai cliccato");
+        
+        overlay.classList.toggle('d-none')
       });
     });
   })
