@@ -80,6 +80,8 @@ fetch("https://lanciweb.github.io/demo/api/pictures/")
 
     const button = document.getElementById("button");
 
+    /* Chiusura overlay */
+    
     button.addEventListener("click", () => {
           overlay.classList.toggle("d-none");
     });
@@ -92,11 +94,7 @@ fetch("https://lanciweb.github.io/demo/api/pictures/")
 
         const thisCard = cards[i];
 
-        photoField.innerHTML = getMarkupPhoto(thisCard.url);
-
-        /* Chiusura overlay */
-
-      
+        photoField.innerHTML = getMarkupPhoto(thisCard.url);      
       });
     });
   })
