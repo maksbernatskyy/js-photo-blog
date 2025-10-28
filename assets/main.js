@@ -64,11 +64,15 @@ fetch("https://lanciweb.github.io/demo/api/pictures/")
 
     /* Interattività al click delle card */
 
+    // Tutti i div con classe card
     const photo = document.querySelectorAll(".card");
 
+    // Div con id overlay
     const overlay = document.getElementById('overlay')
 
+    // Seleziono singolarmente i div
     photo.forEach((thisPhoto) => {
+      // Al click di una card appare l'overlay
       thisPhoto.addEventListener("click", () => {
         
         overlay.classList.toggle('d-none')
