@@ -78,13 +78,10 @@ fetch("https://lanciweb.github.io/demo/api/pictures/")
     // Spazio foto nell'HTML
     const photoField = document.getElementById("photofield");
 
+    // Bottone
     const button = document.getElementById("button");
 
-    /* Chiusura overlay */
     
-    button.addEventListener("click", () => {
-          overlay.classList.toggle("d-none");
-    });
 
     // Seleziono singolarmente i div
     photo.forEach((thisPhoto, i) => {
@@ -97,7 +94,16 @@ fetch("https://lanciweb.github.io/demo/api/pictures/")
         photoField.innerHTML = getMarkupPhoto(thisCard.url);      
       });
     });
+
+    /* Chiusura overlay */
+    
+    button.addEventListener("click", () => {
+          overlay.classList.toggle("d-none");
+    });
+
   })
   .catch((error) => {
     console.error(error);
   });
+
+  
