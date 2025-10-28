@@ -71,15 +71,25 @@ fetch("https://lanciweb.github.io/demo/api/pictures/")
 
     // Tutti i div con classe card
     const photo = document.querySelectorAll(".card");
-
+    
     // Div con id overlay
     const overlay = document.getElementById('overlay')
 
+    // Spazio foto nell'HTML
+    const photoField = document.getElementById('photofield')
+
+    
+
     // Seleziono singolarmente i div
-    photo.forEach((thisPhoto) => {
+    photo.forEach((thisPhoto, i) => {
       // Al click di una card appare l'overlay
       thisPhoto.addEventListener("click", () => {
-        overlay.classList.toggle('d-none')
+        overlay.classList.remove('d-none')
+        const thisCard = cards[i]
+
+        photoField.innerHTML += getMarkupPhoto(thisCard.url)
+        
+
       });
     });
 
