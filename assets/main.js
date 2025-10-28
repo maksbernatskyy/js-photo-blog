@@ -74,10 +74,17 @@ fetch("https://lanciweb.github.io/demo/api/pictures/")
     photo.forEach((thisPhoto) => {
       // Al click di una card appare l'overlay
       thisPhoto.addEventListener("click", () => {
-        
         overlay.classList.toggle('d-none')
       });
     });
+
+    /* Chiusura overlay */
+
+    const button = document.getElementById('button')
+
+    button.addEventListener('click', () => {
+      overlay.classList.toggle('d-none')
+    })
   })
   .catch((error) => {
     console.error(error);
