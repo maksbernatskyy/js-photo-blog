@@ -16,7 +16,7 @@ Tools:
 function getMarkupCards(image, date, title) {
   return `<div class="col">
                 <div class="card p-3 h-100 position-relative" style="width: 18rem;">
-                    <div class="position-absolute top-0 start-50 translate-middle"><img src="./assets/img/pin.svg" alt=""></div>
+                    <div id="chiodo" class="position-absolute top-0 start-50 translate-middle"><img src="./assets/img/pin.svg" alt=""></div>
                     <img src="${image}" alt="">
                     <div class="pt-3">
                         <span class="text-secondary">${date}</span>

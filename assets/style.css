@@ -10,3 +10,17 @@ body{
 .text-secondary{
     font-family: 'Sometype Mono', 'monospace';
 }
+
+.card{
+    transition: transform 0.3s ease;
+
+    &:hover{
+        transform: rotate(10deg);
+
+        #chiodo{
+            display: none;
+        }
+
+        
+    }
+}
