@@ -14,7 +14,7 @@ Tools:
 
 // Funzione markup
 function getMarkup(image, date, title) {
-  return   `<div class="col">
+  return `<div class="col">
                 <div class="card p-3 h-100 position-relative" style="width: 18rem;">
                     <div class="position-absolute top-0 start-50 translate-middle"><img src="./assets/img/pin.svg" alt=""></div>
                     <img src="${image}" alt="">
@@ -43,7 +43,6 @@ const cardsField = document.getElementById("cards");
 fetch("https://lanciweb.github.io/demo/api/pictures/")
   .then((response) => response.json())
   .then((data) => {
-
     // Inserimento elementi data nell'array
     data.forEach((thisEl) => {
       cards.push(thisEl);
@@ -62,9 +61,17 @@ fetch("https://lanciweb.github.io/demo/api/pictures/")
         );
       }
     }
+
+    /* Interattività al click delle card */
+
+    const photo = document.querySelectorAll(".card");
+
+    photo.forEach((thisPhoto) => {
+      thisPhoto.addEventListener("click", () => {
+        console.log("Hai cliccato");
+      });
+    });
   })
   .catch((error) => {
     console.error(error);
   });
-
-
