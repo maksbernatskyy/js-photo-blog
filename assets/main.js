@@ -12,8 +12,8 @@ Tools:
 
 /* Funzioni */
 
-// Funzione markup
-function getMarkup(image, date, title) {
+// Funzione markup delle card
+function getMarkupCards(image, date, title) {
   return `<div class="col">
                 <div class="card p-3 h-100 position-relative" style="width: 18rem;">
                     <div class="position-absolute top-0 start-50 translate-middle"><img src="./assets/img/pin.svg" alt=""></div>
@@ -24,6 +24,11 @@ function getMarkup(image, date, title) {
                     </div>
                 </div>
             </div>`;
+}
+
+// Funzione markup della foto nell'overlay
+function getMarkupPhoto(photo) {
+  return `<img class="d-block w-100" src="${photo}" alt="">`
 }
 
 // ======================================================================
@@ -54,7 +59,7 @@ fetch("https://lanciweb.github.io/demo/api/pictures/")
       for (let i = 0; i < cards.length; i++) {
         const thisCard = cards[i];
 
-        cardsField.innerHTML += getMarkup(
+        cardsField.innerHTML += getMarkupCards(
           thisCard.url,
           thisCard.date,
           thisCard.title
